@@ -24,3 +24,12 @@ Usage of ./main:
   -p string
     	-p=匹配符，默认为* (default "*")
 ```
+
+# 下载
+
+如果不想自己编译，可以下载好我已经编译的版本. 仓库里的 
+
+scan-redis-cli-amd64 => Linux 64 位
+scan-redis-cli-macos64 => MacOS 64位
+
+其他版本，请自行编译使用。
