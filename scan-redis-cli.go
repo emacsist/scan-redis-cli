@@ -79,15 +79,18 @@ func init() {
 	flag.IntVar(&keyLength, "l", 0, "-l=固定key的长度，默认值为0，即不限")
 	flag.IntVar(&keyCount, "c", 0, "-c=最大key个数，默认为0，即不限")
 
-	flag.BoolVar(&showHelp, "help", true, "-help 显示该帮助")
+	flag.BoolVar(&showHelp, "help", false, "-help 显示该帮助")
 	flag.Parse()
+
+	fmt.Printf("连接的主机为 %v, 匹配模式为 %v, 固定的 key 长度为 %v, key结果个数限制为 %v\n", server, pattern, keyLength, keyCount)
+
 	if showHelp {
 		flag.Usage()
 		os.Exit(0)
 	}
 
 	redisPool = newPool(server, passwd)
-	fmt.Printf("连接的主机为 %v, 匹配模式为 %v, 固定的 key 长度为 %v, key结果个数限制为 %v\n", server, pattern, keyLength, keyCount)
+
 }
 
 func newPool(server, password string) *redis.Pool {
